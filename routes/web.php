@@ -1,7 +1,7 @@
 <?php
 
 /** @var \Laravel\Lumen\Routing\Router $router */
-
+use App\Models\notification;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -14,6 +14,18 @@
 */
 
 $router->get('/', function () use ($router) {
+
+    // $notification = notification::all();
+
+    // echo $notification;
     return view('index');
+    // return view('index', ['notification' => $notification]);
 });
 
+$router->get('/admin', function () use ($router) {
+    return view('addNotification');
+});
+
+// $router->get('/','HomeController@Home');
+
+$router->post('/create','HomeController@Create');
