@@ -58,17 +58,17 @@
                                     <h3>Thông báo mới nhận</h3>
                                 </header>
                                 <ul class="header__notify-list">
-                                    @foreach ($notification as $notify)
+                                    @foreach($notification as $notify)
                                     <li class="header__notify-item header__notify-item--viewed">
                                         <a href="" class="header__notify-link">
-                                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lgnisoguk7hvc1"
+                                            <img src="https://logodix.com/logo/2015085.png"
                                                 alt="" class="header__notify-img" />
                                             <div class="header__notify-info">
                                                 <span class="header__notify-name">
-                                                    {{notify->notification_title}}
+                                                    {{ $notify->notification_title }}
                                                 </span>
                                                 <span class="header__notify-description">
-                                                    {{notify->notification_describe}}
+                                                    {{ $notify->notification_describe }}
                                                 </span>
                                             </div>
                                         </a>
@@ -96,8 +96,7 @@
                 Đăng Nhập
               </li> -->
                         <li class="header__navbar-item header__navbar-user">
-                            <img src="https://www.emmegi.co.uk/wp-content/uploads/2019/01/User-Icon.jpg" alt=""
-                                class="header__navbar-user-img" />
+                            <img src="https://www.emmegi.co.uk/wp-content/uploads/2019/01/User-Icon.jpg" alt="" class="header__navbar-user-img" />
                             <span class="header__navbar-user-name">
                                 Tên người dùng
                             </span>
@@ -178,16 +177,21 @@
                         </button>
                     </div>
 
+                    <!-- Cart layout -->
                     <div class="header__cart">
                         <div class="header__cart-wrap">
                             <i class="header__cart-icon fas fa-shopping-cart"></i>
                             <span class="header__cart-notice">1</span>
+                            <!-- No cart : header__cart-list--no-cart -->
                             <div class="header__cart-list ">
+                                <!-- Nocart -->
                                 <img src="./assets/img/no-cart.png" alt="No Cart" class="header__cart-no-cart-img" />
                                 <span class="header__cart-list-no-cart-msg">
                                     Chưa có sản phẩm
                                 </span>
+                                <!-- Hascart -->
                                 <h4 class="header__cart-heading">Sản phẩm đã thêm</h4>
+                                <!-- Cart item -->
                                 <ul class="header__cart-list-item">
                                     <li class="header__cart-item">
                                         <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-llbk9m9lpv4860"
@@ -210,7 +214,7 @@
                                             </div>
                                         </div>
                                     </li>
-
+                                    
                                 </ul>
                                 <a href="#" class="header__cart-view-cart btn btn--primary">Xem giỏ hàng</a>
                             </div>
@@ -256,7 +260,7 @@
                         </nav>
                     </div>
                     <div class="col l-10 m-12 c-12">
-
+                        
                         <div class="home-filter hide-on-mobile-tablet">
                             <span class="home-filter__label">Sắp xếp theo</span>
                             <button class="home-filter__btn btn">Phổ biến</button>
@@ -267,7 +271,7 @@
                             <div class="select-input">
                                 <span class="select-input__label">Giá</span>
                                 <i class="select-input__icon fas fa-angle-down"></i>
-
+                                
                                 <ul class="select-input__list">
                                     <li class="select-input__item">
                                         <a href="#" class="select-input__link">Giá: Thấp đến Cao</a>
@@ -855,10 +859,12 @@
                             <img src="img/qr_code.png" alt="Download QR" class="footer__dowload-qr" />
                             <div class="footer__download-apps">
                                 <a href="#" class="footer__download-app-link">
-                                    <img src="img/google_play.png" alt="Google Play" class="footer__download-app-img" />
+                                    <img src="img/google_play.png" alt="Google Play"
+                                        class="footer__download-app-img" />
                                 </a>
                                 <a href="#" class="footer__download-app-link">
-                                    <img src="img/appstore.png" alt="App store" class="footer__download-app-img" />
+                                    <img src="img/appstore.png" alt="App store"
+                                        class="footer__download-app-img" />
                                 </a>
                             </div>
                         </div>

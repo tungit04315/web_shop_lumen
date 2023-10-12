@@ -13,19 +13,30 @@ use App\Models\notification;
 |
 */
 
-$router->get('/', function () use ($router) {
+// $router->get('/', function () use ($router) {
 
-    // $notification = notification::all();
+//     $notification = notification::all();
 
-    // echo $notification;
-    return view('index');
-    // return view('index', ['notification' => $notification]);
-});
+//     // echo $notification;
+//     // return view('h');
+//     return view('index', ['notification' => $notification]);
+// });
 
 $router->get('/admin', function () use ($router) {
-    return view('addNotification');
+    $notification = notification::all();
+
+    return view('addNotification', ['notification' => $notification]);
 });
 
-// $router->get('/','HomeController@Home');
+$router->get('/test', function () use ($router) {
+    return view('test');
+});
+
+$router->get('/','HomeController@Home');
 
 $router->post('/create','HomeController@Create');
+$router->put('/update/{id}','HomeController@Update');
+$router->delete('/delete/{id}','HomeController@Delete');
+$router->get('/findById','HomeController@FindById');
+
+$router->get('/notification', 'HomeController@index');

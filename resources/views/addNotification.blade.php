@@ -7,11 +7,16 @@
     <title>Admin</title>
     <link rel="icon" type="image/x-icon" href="https://logodix.com/logo/2015085.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous">
+    </script>
 </head>
 
 <body>
@@ -116,12 +121,14 @@
                     </li>
                     <li>
                         <a href="">
-                            <i class="fa-solid fa-caret-right" style="font-size: 15px;"></i><span>Cập Nhật Sản Phẩm</span>
+                            <i class="fa-solid fa-caret-right" style="font-size: 15px;"></i><span>Cập Nhật Sản
+                                Phẩm</span>
                         </a>
                     </li>
                     <li>
                         <a href="">
-                            <i class="fa-solid fa-caret-right" style="font-size: 15px;"></i><span>Nhập Kho Sản Phẩm</span>
+                            <i class="fa-solid fa-caret-right" style="font-size: 15px;"></i><span>Nhập Kho Sản
+                                Phẩm</span>
                         </a>
                     </li>
                 </ul>
@@ -136,7 +143,8 @@
                 <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="">
-                            <i class="fa-solid fa-caret-right" style="font-size: 15px;"></i><span>Danh Sách Sản Phẩm</span>
+                            <i class="fa-solid fa-caret-right" style="font-size: 15px;"></i><span>Danh Sách Sản
+                                Phẩm</span>
                         </a>
                     </li>
                     <li>
@@ -155,12 +163,14 @@
                 <ul id="listUsers-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="">
-                            <i class="fa-solid fa-caret-right" style="font-size: 15px;"></i><span>Danh Sách Tài Khoản</span>
+                            <i class="fa-solid fa-caret-right" style="font-size: 15px;"></i><span>Danh Sách Tài
+                                Khoản</span>
                         </a>
                     </li>
                     <li>
                         <a href="">
-                            <i class="fa-solid fa-caret-right" style="font-size: 15px;"></i><span>Lịch Sử Đănh Nhập</span>
+                            <i class="fa-solid fa-caret-right" style="font-size: 15px;"></i><span>Lịch Sử Đănh
+                                Nhập</span>
                         </a>
                     </li>
                 </ul>
@@ -190,13 +200,43 @@
             </nav>
         </div>
         <section class="section dashboard">
+            <div class="mb-3">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Tiêu đề</th>
+                            <!-- <th scope="col">Mô tả</th> -->
+                            <th scope="col">Thời gian</th>
+                            <th scope="col">Người đăng</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($notification as $notify)
+                        <tr>
+                            <th>{{ $notify->notification_id }}</th>
+                            <td>{{ $notify->notification_title }}</td>
+                            <!-- <td>{{ $notify->notification_describe }}</td> -->
+                            <td>{{ $notify->notification_date }}</td>
+                            <td>{{ $notify->user }}</td>
+                            <td>
+                                <a href="#" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"
+                                        style="color: #ffffff;"></i></a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
             <div class="row">
                 <div class="col-xl-12">
                     <div class="card">
                         <div class="card-body pt-3">
                             <ul class="nav nav-tabs nav-tabs-bordered">
                                 <li class="nav-item">
-                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#addProduct">Thêm Thông Báo</button>
+                                    <button class="nav-link active" data-bs-toggle="tab"
+                                        data-bs-target="#addProduct">Thêm Thông Báo</button>
                                 </li>
                             </ul>
                             <div class="tab-content pt-2">
@@ -208,34 +248,52 @@
                                                 <img src="" alt="" id="imgProduct" style="width: 10%;">
                                                 <div class="pt-2">
                                                     <input type="file" id="fileform" class="fileform" hidden>
-                                                    <label for="fileform" id="customFile" onclick="defautlBtnIMG()" class="btn btn-primary btn-sm"><i class="fa-solid fa-upload"></i></label>
-                                                    <label href="#" id="deleteFile" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can"></i></label>
+                                                    <label for="fileform" id="customFile" onclick="defautlBtnIMG()"
+                                                        class="btn btn-primary btn-sm"><i
+                                                            class="fa-solid fa-upload"></i></label>
+                                                    <label href="#" id="deleteFile" class="btn btn-danger btn-sm"><i
+                                                            class="fa-solid fa-trash-can"></i></label>
+                                                    <p class="d-inline-flex gap-1">
+                                                        <a class="btn btn-primary btn-sm" data-bs-toggle="collapse"
+                                                            href="#collapseExample" role="button" aria-expanded="false"
+                                                            aria-controls="collapseExample">
+                                                            <i class="fa-solid fa-link" style="color: #ffffff;"></i>
+                                                        </a>
+                                                    </p>
+                                                    <div class="collapse" id="collapseExample">                                                     
+                                                        <input type="text" class="form-control" placeholder="Link Image">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="row mb-3">
-                                            <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Tiêu đề:</label>
+                                            <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Tiêu
+                                                đề:</label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="title" type="text" class="form-control" id="title" placeholder="Tiêu đề thông báo">
+                                                <input name="title" type="text" class="form-control" id="title"
+                                                    placeholder="Tiêu đề thông báo">
                                             </div>
                                         </div>
 
                                         <div class="row mb-3">
                                             <label for="about" class="col-md-4 col-lg-3 col-form-label">Mô tả:</label>
                                             <div class="col-md-8 col-lg-9">
-                                                <textarea name="about" class="form-control" id="about" style="height: 100px">
-                                                
+                                                <textarea name="about" class="form-control" id="about"
+                                                    style="height: 100px">
+
                                                 </textarea>
                                             </div>
                                         </div>
 
-                                        
+
 
                                         <div class="row mb-3">
-                                            <label for="Country" class="col-md-4 col-lg-3 col-form-label"></label>
+                                            <label class="col-md-4 col-lg-3 col-form-label"></label>
                                             <div class="col-md-8 col-lg-9">
-                                                <button type="submit" class="btn btn-primary">Thêm</button>
+                                                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
+                                                <button type="submit" class="btn btn-primary"><i class="fa-regular fa-pen-to-square" style="color: #ffffff;"></i></button>
+                                                <button type="submit" class="btn btn-primary"><i class="fa-regular fa-trash-can" style="color: #ffffff;"></i></button>
                                             </div>
 
                                         </div>

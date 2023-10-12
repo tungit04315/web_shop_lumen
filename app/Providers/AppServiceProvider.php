@@ -3,8 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\View;
-use App\Models\notification;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,9 +15,4 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
-
-    // public function boot(){
-    //     $notify = notification::all();
-    //     View::share('notification', $notify);
-    // }
 }
