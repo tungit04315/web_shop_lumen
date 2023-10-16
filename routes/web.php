@@ -33,6 +33,7 @@ $router->get('/test', function () use ($router) {
 });
 
 $router->get('/','HomeController@Home');
+$router->get('/mail','HomeController@Mail');
 
 $router->post('/create','HomeController@Create');
 $router->put('/update/{id}','HomeController@Update');

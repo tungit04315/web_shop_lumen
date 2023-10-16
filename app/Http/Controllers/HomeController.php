@@ -35,6 +35,18 @@ class HomeController extends Controller
         // return view('index');
     }
 
+    public function Mail()
+    {
+        $data = [
+            'name' => 'Tùng',
+            'content' => 'Test'
+        ];
+
+        Mail::send("mail", $data, function ($message) {
+            $message->to("tungit04315@gmail.com")->subject("Test Code Email Queues.");
+        });
+    }
+
     public function ListNotifications()
     {
         return notification::all();
@@ -43,15 +55,15 @@ class HomeController extends Controller
     public function Create(Request $request)
     {
 
-        $Notification = new notification();
-        $Notification->notification_title = $request->input('notification_title');
-        $Notification->notification_describe = $request->input('notification_describe');
-        $Notification->notification_img = $request->input('notification_img');
-        $Notification->notification_date = date('Y-m-d H:i:s');
-        $Notification->retry_count = $request->input('retry_count');
-        $Notification->notification_date = date('Y-m-d H:i:s');
-        $Notification->user = 'LC';
-        echo $Notification->save();
+        // $Notification = new notification();
+        // $Notification->notification_title = $request->input('notification_title');
+        // $Notification->notification_describe = $request->input('notification_describe');
+        // $Notification->notification_img = $request->input('notification_img');
+        // $Notification->notification_date = date('Y-m-d H:i:s');
+        // $Notification->retry_count = $request->input('retry_count');
+        // $Notification->notification_date = date('Y-m-d H:i:s');
+        // $Notification->user = 'LC';
+        // echo $Notification->save();
 
         $data = [
             'name' => 'Tùng',
